@@ -1,0 +1,80 @@
+---
+---
+<canvas></canvas>
+
+<script is:inline>
+    const canvas = document.querySelector('canvas');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight - (window.innerHeight / 20);
+
+    class Wave {
+        constructor(
+            canv,
+            maxAmplitude = 100,
+            length = 100,
+            frequency = 8,
+            bgOpacity = 0.3,
+            y
+        ) {
+            this.canvas = canv;
+            this.ctx = this.canvas.getContext("2d");
+            this.maxAmplitude = maxAmplitude;
+            this.amplitude = 0;
+            this.length = length;
+            this.frequency = frequency;
+            this.increment = Math.random() * 360;
+            this.bgOpacity = bgOpacity;
+            this.y = y || this.canvas.height / 2;
+
+            this.frameCallback = () => {
+                this.draw(this.ctx);
+                requestAnimationFrame(this.frameCallback);
+            };
+        }
+
+        draw(c) {
+            c.beginPath();
+
+            this.ctx.fillStyle = `rgba(0,0,255,${this.bgOpacity})`;
+            this.ctx.strokeStyle = `rgb(255, 255, 0)`;
+
+            c.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+            c.moveTo(0, this.canvas.height / 2);
+
+            for (let i = 0; i < this.canvas.width; i += 1) {
+                c.lineTo(
+                    i,
+                    this.y +
+                        Math.sin(i / this.length + this.increment) *
+                            this.amplitude
+                );
+            }
+
+            c.stroke();
+            c.closePath();
+
+            this.amplitude = Math.sin(this.increment) * this.maxAmplitude;
+            this.increment -= this.frequency / 1000;
+        }
+
+        animate() {
+            this.frameCallback();
+        }
+    }
+
+    const wave = new Wave(canvas, 250, 500, -4);
+    wave.animate()
+</script>
+<style lang="scss">
+    canvas {
+        padding: 0;
+        margin: 0;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -99;
+        position: absolute;
+    }
+</style>
