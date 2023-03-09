@@ -1,6 +1,6 @@
-$primary: #00F;
-$secondary: #FF0;
-$tertiary: #F00;
+@import 'fonts';
+@import 'constants';
+
 
 
 html,
@@ -9,6 +9,7 @@ body {
     margin: 0;
     background: $primary;
     color: $secondary;
+    font-family: 'Playfair Display';
 }
 
 body::before {
@@ -29,48 +30,12 @@ body::before {
     pointer-events: none;
 }
 
+a {
+    text-decoration: none;
+    color: $secondary;
+    border-bottom: 1px solid;
+}
 
-
-@keyframes grain {
-
-    0%,
-    100% {
-        transform: translate(0, 0);
-    }
-
-    10% {
-        transform: translate(-5%, -10%);
-    }
-
-    20% {
-        transform: translate(-15%, 5%);
-    }
-
-    30% {
-        transform: translate(7%, -25%);
-    }
-
-    40% {
-        transform: translate(-5%, 25%);
-    }
-
-    50% {
-        transform: translate(-15%, 10%);
-    }
-
-    60% {
-        transform: translate(15%, 0%);
-    }
-
-    70% {
-        transform: translate(0%, 15%);
-    }
-
-    80% {
-        transform: translate(3%, 35%);
-    }
-
-    90% {
-        transform: translate(-10%, 10%);
-    }
+a:hover {
+    border-bottom: 2px solid;
 }

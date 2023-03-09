@@ -1,15 +1,30 @@
 ---
 import MainButton from "./MainButton.astro";
-
 ---
+
 <nav>
     <ul>
-        <li>FAQ</li>
-        <li>About</li>
-        <MainButton text="Contact" url="https://google.com" />
+        <li>
+            <a href="/faq">FAQ</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
     </ul>
 </nav>
 
 <style lang="scss">
-
+    nav {
+        font-family: 'Bebas Neue';
+        font-size: 2em;
+        padding: 0 20px;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: end;
+    }
+    li {
+        margin-left: 20px;
+    }
 </style>
