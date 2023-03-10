@@ -2,12 +2,22 @@
 @import 'constants';
 
 
-
-html,
-body {
-    padding: 0;
+* {
     margin: 0;
-    background: $primary;
+    padding: 0;
+    background: transparent;
+}
+
+::selection {
+    background: $tertiary;
+}
+
+html {
+    background-color: $primary;
+    overflow: hidden;
+}
+
+body {
     color: $secondary;
     font-family: 'Playfair Display';
 }
@@ -18,7 +28,7 @@ body::before {
     background-image: url(/noise.png);
 
     // invert colors for white grain
-    filter: invert(1);
+    // filter: invert(1);
 
     content: '';
     height: 300%;

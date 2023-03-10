@@ -11,3 +11,41 @@
         Learn More
     </button>
 </form>
+
+<style lang="scss">
+    @import "../styles/constants";
+
+    input {
+        background-color: $secondary;
+        font-family: 'Playfair Display'; 
+        font-size: 1.5rem;
+        padding: 1px 10px;
+        font-style: italic;
+        color: $black;
+        width: 70%;
+        height: 50px;
+
+        outline: none;
+        border: none;
+        box-shadow: 5px 5px $black;
+    }
+
+    input::placeholder {
+        opacity: 1;
+    }
+
+    button {
+        font-family: 'Bebas Neue';
+        font-size: 1.5em;
+        height: 50px;
+        background-color: $tertiary;
+        padding: 5px;
+        margin: 5px;
+        box-shadow: 5px 5px $secondary;
+        border: 1px solid $black;
+
+        color: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+</style>

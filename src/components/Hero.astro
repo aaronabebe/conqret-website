@@ -3,11 +3,15 @@ import EmailForm from "./EmailForm.astro";
 ---
 
 <div class="hero-container">
-    <div>
-        <h1 class="logo-main">conqrèt</h1>
-        <h1 class="logo-bg">AI</h1>
+    <div class="hero-row">
+        <div class="logo-bg">
+            <h1>AI</h1>
+        </div>
+        <div class="logo-main">
+            <h1>conqrèt</h1>
+        </div>
     </div>
-    <div>
+    <div class="hero-row">
         <h2 class="catchphrase-main">
             <p>Sound is the <span class="italic">vocabulary</span></p>
             <p>of <span class="italic">Nature</span>.</p>
@@ -22,21 +26,27 @@ import EmailForm from "./EmailForm.astro";
 
     .hero-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem 0;
+        height: 75vh;
+    }
+
+    .hero-row {
+        margin: 0 80px;
     }
 
     .logo-main {
         font-family: "Bebas Neue";
-        font-size: 6em;
+        font-size: 3em;
         text-shadow: 5px 5px $black;
+        margin-top: -10em;
     }
+
     .logo-bg {
         font-family: "DM Serif Display";
-        font-size: 20em;
-        color: rgba($color: $primary, $alpha: 1.0);
-        position: fixed;
-
-        // shadow hack to get proper outlining
+        font-size: 12rem;
+        color: rgba($color: $primary, $alpha: 1);
         text-shadow: -1px -1px 0 $tertiary, 0 -1px 0 $tertiary,
             1px -1px 0 $tertiary, 1px 0 0 $tertiary, 1px 1px 0 $tertiary,
             0 1px 0 $tertiary, -1px 1px 0 $tertiary, -1px 0 0 $tertiary;
@@ -49,7 +59,7 @@ import EmailForm from "./EmailForm.astro";
     .catchphrase-main {
         color: $white;
         font-size: 3rem;
-        line-height: 0.5;
+        line-height: 1.2;
     }
 
     .catchphrase-secondary {

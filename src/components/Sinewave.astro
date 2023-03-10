@@ -6,7 +6,7 @@
     const canvas = document.querySelector('canvas');
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight - (window.innerHeight / 20);
+    canvas.height = window.innerHeight;
 
     class Wave {
         constructor(
@@ -14,7 +14,7 @@
             maxAmplitude = 100,
             length = 100,
             frequency = 8,
-            bgOpacity = 0.3,
+            bgOpacity = 0.1,
             y
         ) {
             this.canvas = canv;
