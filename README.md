@@ -10,7 +10,7 @@
 - [ ] sinewave freq change on mousemove
 - [ ] improve noise for blue bg
 - [ ] add bold playfair font
-- [ ] 
+- [ ] setup analytics and track
 - [ ] 
 
 ## 🧞 Commands
