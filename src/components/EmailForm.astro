@@ -1,33 +1,66 @@
 ---
+import * as fs from "fs";
+
+if (Astro.request.method === "POST") {
+    try {
+        const data = await Astro.request.formData();
+        console.log(data);
+        const email = data.get("email") + '\r\n';
+
+        fs.writeFile("emails.txt", email, { flag: "a+" }, (err: Error) => {
+            if (err) {
+                console.error(err);
+            }
+        });
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(error.message);
+        }
+    }
+}
 ---
-<form>
-    <input
-        type="text"
-        id="email"
-        placeholder="Email"
-        required
-    />
-    <button type="submit">
-        Learn More
+
+<form method="POST">
+    <input type="text" id="email" name="email" placeholder="Email" required />
+    <button>
+        <span> Learn More</span>
     </button>
 </form>
 
 <style lang="scss">
     @import "../styles/constants";
 
+    form {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 20px 0;
+        flex-direction: column;
+
+        @include for-desktop-up {
+            flex-direction: row;
+        }
+    }
+
     input {
         background-color: $secondary;
-        font-family: 'Playfair Display'; 
+        font-family: "Playfair Display";
         font-size: 1.5rem;
         padding: 1px 10px;
         font-style: italic;
         color: $black;
-        width: 70%;
         height: 50px;
+        margin: 20px;
+
+        box-shadow: 5px 5px $black;
+        border: 1px solid $black;
 
         outline: none;
-        border: none;
-        box-shadow: 5px 5px $black;
+
+        @include for-desktop-up {
+            flex-direction: row;
+            margin: 0;
+        }
     }
 
     input::placeholder {
@@ -35,17 +68,33 @@
     }
 
     button {
-        font-family: 'Bebas Neue';
+        font-family: "Bebas Neue";
         font-size: 1.5em;
-        height: 50px;
-        background-color: $tertiary;
-        padding: 5px;
-        margin: 5px;
-        box-shadow: 5px 5px $secondary;
-        border: 1px solid $black;
+        background: $black;
+        margin-left: 1em;
+        margin-top: 10px;
+        // box-shadow: 5px 5px $black;
 
         color: inherit;
         cursor: pointer;
         outline: inherit;
+        border: none;
+        transition: all 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    }
+
+    button span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $tertiary;
+        border: 1px solid $black;
+        height: 50px;
+        width: 120px;
+        transition: all 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+        transform: translate3d(-5px, -5px, 0);
+    }
+
+    button:hover span {
+        transform: translate3d(-10px, -10px, 0);
     }
 </style>

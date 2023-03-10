@@ -15,6 +15,7 @@
     "dat.gui": "^0.7.9"
   },
   "devDependencies": {
+    "@types/node": "^18.15.0",
     "sass": "^1.58.3"
   }
 }

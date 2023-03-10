@@ -14,7 +14,11 @@
 
 html {
     background-color: $primary;
-    overflow: hidden;
+    overflow-x: hidden;
+
+    @include for-desktop-up {
+        overflow: hidden;
+    }
 }
 
 body {
@@ -25,10 +29,7 @@ body {
 body::before {
     // activate for noise effect
     animation: grain 8s steps(10) infinite;
-    background-image: url(/noise.png);
-
-    // invert colors for white grain
-    // filter: invert(1);
+    background-image: url(/noise_white.png);
 
     content: '';
     height: 300%;

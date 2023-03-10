@@ -3,14 +3,13 @@ import EmailForm from "./EmailForm.astro";
 ---
 
 <div class="hero-container">
-    <div class="hero-row">
-        <div class="logo-bg">
+    <div>
+            <h1 class="logo-main">conqrèt</h1>
+            <div class="logo-bg">
+
             <h1>AI</h1>
+            </div>
         </div>
-        <div class="logo-main">
-            <h1>conqrèt</h1>
-        </div>
-    </div>
     <div class="hero-row">
         <h2 class="catchphrase-main">
             <p>Sound is the <span class="italic">vocabulary</span></p>
@@ -28,28 +27,49 @@ import EmailForm from "./EmailForm.astro";
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 3rem 0;
-        height: 75vh;
+        height: 70vh;
+        flex-direction: column;
+
+        @include for-desktop-up {
+            flex-direction: row;
+            margin: 5em 0 3em 0;
+        }
     }
 
     .hero-row {
-        margin: 0 80px;
+        padding: 5px;
+        @include for-desktop-up {
+            margin-left: 80px;
+        }
     }
 
     .logo-main {
         font-family: "Bebas Neue";
         font-size: 3em;
+        margin-top: 1.5em;
+        margin-left: -1em;
+        position: absolute;
         text-shadow: 5px 5px $black;
-        margin-top: -10em;
+
+        @include for-desktop-up {
+            font-size: 7.5em;
+            margin-top: 1.5em;
+            margin-left: 0;
+        }
     }
 
     .logo-bg {
         font-family: "DM Serif Display";
-        font-size: 12rem;
+        font-size: 5em;
         color: rgba($color: $primary, $alpha: 1);
         text-shadow: -1px -1px 0 $tertiary, 0 -1px 0 $tertiary,
             1px -1px 0 $tertiary, 1px 0 0 $tertiary, 1px 1px 0 $tertiary,
             0 1px 0 $tertiary, -1px 1px 0 $tertiary, -1px 0 0 $tertiary;
+
+        @include for-desktop-up {
+            font-size: 14em;
+
+        }
     }
 
     .italic {
@@ -58,14 +78,22 @@ import EmailForm from "./EmailForm.astro";
 
     .catchphrase-main {
         color: $white;
-        font-size: 3rem;
+        font-size: 2em;
         line-height: 1.2;
+
+        @include for-desktop-up {
+            font-size: 3em;
+        }
     }
 
     .catchphrase-secondary {
         font-family: "DM Serif Display";
         font-style: italic;
         text-shadow: 5px 5px $black;
-        font-size: 4rem;
+        font-size: 2em;
+
+        @include for-desktop-up {
+            font-size: 4em;
+        }
     }
 </style>
