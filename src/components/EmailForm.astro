@@ -4,7 +4,6 @@ import * as fs from "fs";
 if (Astro.request.method === "POST") {
     try {
         const data = await Astro.request.formData();
-        console.log(data);
         const email = data.get("email") + '\r\n';
 
         fs.writeFile("emails.txt", email, { flag: "a+" }, (err: Error) => {

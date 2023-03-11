@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.0.18",
+    "@astrojs/node": "^5.1.0",
+    "astro": "^2.1.2",
     "astro-seo": "^0.7.1",
     "dat.gui": "^0.7.9"
   },

@@ -2,15 +2,17 @@
 
 ## TODOs
 
-- [ ] mobile support for styling
-- [ ] fix logo
-- [ ] button animations
-- [ ] form email saving
+- [x] mobile support for styling
+- [x] fix logo
+- [x] button animations
+- [x] form email saving
 - [ ] deployment
 - [ ] sinewave freq change on mousemove
-- [ ] improve noise for blue bg
+- [x] improve noise for blue bg
 - [ ] add bold playfair font
-- [ ] setup analytics and track
+- [x] setup analytics and track
+
+- [ ] 
 - [ ] 
 
 ## 🧞 Commands
