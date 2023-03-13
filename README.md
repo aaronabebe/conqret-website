@@ -1,18 +1,20 @@
 # conqrèt website
 
+Currently running at [conqret.com](https://conqret.com)
+
 ## TODOs
 
 - [x] mobile support for styling
 - [x] fix logo
 - [x] button animations
 - [x] form email saving
-- [ ] deployment
+- [x] deployment
 - [ ] sinewave freq change on mousemove
 - [x] improve noise for blue bg
 - [ ] add bold playfair font
 - [x] setup analytics and track
+- [ ] zoom animation on form submit -> maybe only have result text on page? 
 
-- [ ] 
 - [ ] 
 
 ## 🧞 Commands
@@ -46,8 +48,3 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
 Any static assets, like images, can be placed in the `public/` directory.
-
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
